@@ -114,8 +114,9 @@ namespace ShowNow
         private void Show_Load(object sender, EventArgs e)
         {
             //
-            txtBoxInterface01.Text = string.Join(Environment.NewLine,control.NetwokDetails());
-            Debug.WriteLine(string.Join(Environment.NewLine, control.NetwokDetails()));
+            txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
+            allIntf01.Checked = true; allIntf01.Text = "Up";
+            //Debug.WriteLine(string.Join(Environment.NewLine, control.NetwokDetails()));
         }
 
 
@@ -170,5 +171,20 @@ namespace ShowNow
         {
             Clipboard.SetText(ipAddress);
         }
+
+        private void allIntf01_CheckedChanged(object sender, EventArgs e)
+        {
+            if (allIntf01.Checked)
+            {
+                txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
+                allIntf01.Text = "Up";
+            }
+            else
+            {
+                txtBoxInterface01.Text = string.Join(Environment.NewLine, control.NetwokDetails());
+                allIntf01.Text = "All";
+            }
+        }
+       
     }
 }

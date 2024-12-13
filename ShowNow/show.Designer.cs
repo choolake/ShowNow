@@ -36,8 +36,9 @@
             horizontalPanel1 = new FlowLayoutPanel();
             HorizontalPanel2 = new FlowLayoutPanel();
             flowHLayout2 = new FlowLayoutPanel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            allIntf01 = new CheckBox();
             lblAllInterface01 = new Label();
-            button2 = new Button();
             lblPubIp01 = new Label();
             lblIP02 = new Label();
             butPubIPCopy = new Button();
@@ -46,6 +47,7 @@
             horizontalPanel1.SuspendLayout();
             HorizontalPanel2.SuspendLayout();
             flowHLayout2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // butMinimize
@@ -119,41 +121,56 @@
             // 
             // flowHLayout2
             // 
-            flowHLayout2.Controls.Add(lblAllInterface01);
-            flowHLayout2.Controls.Add(button2);
+            flowHLayout2.Controls.Add(flowLayoutPanel1);
             flowHLayout2.Controls.Add(lblPubIp01);
             flowHLayout2.Controls.Add(lblIP02);
             flowHLayout2.Controls.Add(butPubIPCopy);
             flowHLayout2.Location = new Point(3, 155);
             flowHLayout2.Name = "flowHLayout2";
-            flowHLayout2.Size = new Size(494, 34);
+            flowHLayout2.Size = new Size(494, 52);
             flowHLayout2.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(allIntf01);
+            flowLayoutPanel1.Controls.Add(lblAllInterface01);
+            flowLayoutPanel1.FlowDirection = FlowDirection.BottomUp;
+            flowLayoutPanel1.Location = new Point(3, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(215, 44);
+            flowLayoutPanel1.TabIndex = 8;
+            // 
+            // allIntf01
+            // 
+            allIntf01.Appearance = Appearance.Button;
+            allIntf01.AutoSize = true;
+            allIntf01.Checked = true;
+            allIntf01.CheckState = CheckState.Checked;
+            allIntf01.Font = new Font("Segoe UI", 7F);
+            allIntf01.Location = new Point(3, 16);
+            allIntf01.Name = "allIntf01";
+            allIntf01.Size = new Size(32, 25);
+            allIntf01.TabIndex = 7;
+            allIntf01.Text = "Up";
+            allIntf01.UseVisualStyleBackColor = true;
+            allIntf01.CheckedChanged += allIntf01_CheckedChanged;
             // 
             // lblAllInterface01
             // 
             lblAllInterface01.AutoSize = true;
-            lblAllInterface01.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAllInterface01.Location = new Point(3, 0);
+            lblAllInterface01.Font = new Font("Segoe UI", 5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAllInterface01.Location = new Point(3, 1);
             lblAllInterface01.Name = "lblAllInterface01";
-            lblAllInterface01.Size = new Size(136, 19);
+            lblAllInterface01.Size = new Size(47, 12);
             lblAllInterface01.TabIndex = 6;
-            lblAllInterface01.Text = "Show All Interfaces";
+            lblAllInterface01.Text = "Interfaces";
             lblAllInterface01.Click += lblAllInterface01_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(145, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 5;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
             // 
             // lblPubIp01
             // 
             lblPubIp01.AutoSize = true;
             lblPubIp01.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPubIp01.Location = new Point(245, 0);
+            lblPubIp01.Location = new Point(224, 0);
             lblPubIp01.Name = "lblPubIp01";
             lblPubIp01.Size = new Size(90, 25);
             lblPubIp01.TabIndex = 3;
@@ -163,7 +180,7 @@
             // 
             lblIP02.AutoSize = true;
             lblIP02.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIP02.Location = new Point(341, 0);
+            lblIP02.Location = new Point(320, 0);
             lblIP02.Name = "lblIP02";
             lblIP02.Size = new Size(92, 25);
             lblIP02.TabIndex = 4;
@@ -177,7 +194,7 @@
             butPubIPCopy.BackgroundImageLayout = ImageLayout.Zoom;
             butPubIPCopy.FlatAppearance.BorderSize = 0;
             butPubIPCopy.FlatStyle = FlatStyle.Flat;
-            butPubIPCopy.Location = new Point(439, 4);
+            butPubIPCopy.Location = new Point(418, 4);
             butPubIPCopy.Margin = new Padding(3, 4, 3, 4);
             butPubIPCopy.Name = "butPubIPCopy";
             butPubIPCopy.Size = new Size(21, 21);
@@ -189,12 +206,12 @@
             // 
             txtBoxInterface01.BackColor = SystemColors.Window;
             txtBoxInterface01.Dock = DockStyle.Fill;
-            txtBoxInterface01.Location = new Point(3, 195);
+            txtBoxInterface01.Location = new Point(3, 213);
             txtBoxInterface01.Multiline = true;
             txtBoxInterface01.Name = "txtBoxInterface01";
             txtBoxInterface01.ReadOnly = true;
             txtBoxInterface01.ScrollBars = ScrollBars.Both;
-            txtBoxInterface01.Size = new Size(494, 246);
+            txtBoxInterface01.Size = new Size(494, 275);
             txtBoxInterface01.TabIndex = 8;
             // 
             // Show
@@ -216,6 +233,8 @@
             HorizontalPanel2.PerformLayout();
             flowHLayout2.ResumeLayout(false);
             flowHLayout2.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,8 +252,9 @@
         private Label lblPubIp01;
         private Label lblIP02;
         private Button butPubIPCopy;
-        private Button button2;
-        private Label lblAllInterface01;
         private TextBox txtBoxInterface01;
+        private CheckBox allIntf01;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label lblAllInterface01;
     }
 }
