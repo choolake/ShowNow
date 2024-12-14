@@ -40,7 +40,7 @@ namespace ShowNow
 
             //// WIndow size
             //this.Size = new Size((int)(Screen.PrimaryScreen.WorkingArea.Width * 0.3), (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.5)); // 30% of screen width, fixed height
-            this.Size = new Size(500, (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.5)); // 30% of screen width, fixed height
+            //this.Size = new Size(450, 600); // 30% of screen width, fixed height
             PositionFormAtBottomRight();
             //////
             // remove hte top border
@@ -72,18 +72,21 @@ namespace ShowNow
                 ipAddress = await control.GetPublicIpArddress();
                 notifyIcon.Text = $"Public IP: {ipAddress}";
                 lblIP02.Invoke(new Action(() => { lblIP02.Text = ipAddress; }));
-                if (this.WindowState == FormWindowState.Normal) {
+                if (this.WindowState == FormWindowState.Normal)
+                {
                     if (allIntf01.Checked)
                     {
-                        txtBoxInterface01.Invoke(new Action(() => {
+                        txtBoxInterface01.Invoke(new Action(() =>
+                        {
                             txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
                         }));
-                        
+
                         allIntf01.Text = "Up";
                     }
                     else
                     {
-                        txtBoxInterface01.Invoke(new Action(() => {
+                        txtBoxInterface01.Invoke(new Action(() =>
+                        {
                             txtBoxInterface01.Text = string.Join(Environment.NewLine, control.NetwokDetails());
                         }));
                         allIntf01.Text = "All";
@@ -168,21 +171,6 @@ namespace ShowNow
             Application.Exit();
         }
 
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAllInterface01_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void butPubIPCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(ipAddress);
@@ -201,6 +189,6 @@ namespace ShowNow
                 allIntf01.Text = "All";
             }
         }
-       
+
     }
 }

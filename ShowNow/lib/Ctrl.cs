@@ -84,7 +84,7 @@ namespace ShowNow.lib
             }
             //
             string[] str_details= details.ToArray();
-            foreach (var t in str_details) { Debug.WriteLine(t); }
+            //foreach (var t in str_details) { Debug.WriteLine(t); }
             //Debug.WriteLine(details);
             return str_details;
         }
@@ -138,7 +138,7 @@ namespace ShowNow.lib
             }
             //
             string[] str_details = details.ToArray();
-            foreach (var t in str_details) { Debug.WriteLine(t); }
+            //foreach (var t in str_details) { Debug.WriteLine(t); }
             //Debug.WriteLine(details);
             return str_details;
         }
