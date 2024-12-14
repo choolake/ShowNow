@@ -72,17 +72,25 @@ namespace ShowNow
                 ipAddress = await control.GetPublicIpArddress();
                 notifyIcon.Text = $"Public IP: {ipAddress}";
                 lblIP02.Invoke(new Action(() => { lblIP02.Text = ipAddress; }));
+                if (this.WindowState == FormWindowState.Normal) {
+                    if (allIntf01.Checked)
+                    {
+                        txtBoxInterface01.Invoke(new Action(() => {
+                            txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
+                        }));
+                        
+                        allIntf01.Text = "Up";
+                    }
+                    else
+                    {
+                        txtBoxInterface01.Invoke(new Action(() => {
+                            txtBoxInterface01.Text = string.Join(Environment.NewLine, control.NetwokDetails());
+                        }));
+                        allIntf01.Text = "All";
+                    }
+                }
             };
             timer.Start();
-
-            //Fetch IP on startup
-            Task.Run(async () =>
-            {
-                ipAddress = await control.GetPublicIpArddress();
-                notifyIcon.Text = $"Public IP: {ipAddress}";
-                lblIP02.Invoke(new Action(() => { lblIP02.Text = ipAddress; }));
-
-            });
 
             this.WindowState = FormWindowState.Normal;
             PositionFormAtBottomRight();
@@ -113,6 +121,14 @@ namespace ShowNow
 
         private void Show_Load(object sender, EventArgs e)
         {
+            //Fetch IP on startup
+            Task.Run(async () =>
+            {
+                ipAddress = await control.GetPublicIpArddress();
+                notifyIcon.Text = $"Public IP: {ipAddress}";
+                lblIP02.Invoke(new Action(() => { lblIP02.Text = ipAddress; }));
+
+            });
             //
             txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
             allIntf01.Checked = true; allIntf01.Text = "Up";
