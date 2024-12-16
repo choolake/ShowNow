@@ -41,6 +41,9 @@
 ## Screenshots
 
 *comming soon...*
+![image](https://github.com/user-attachments/assets/ef4fe005-a86a-4e0c-86e4-8e0dded3012c)
+![image](https://github.com/user-attachments/assets/0093156f-487d-41d8-bd34-548c35a70b00)
+![image](https://github.com/user-attachments/assets/16bfebf4-afcb-4258-b1cf-ca6c32a74814)
 
 ---
 
