@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Resources\copy_icon.png" />
     <None Remove="Resources\minimize_icon.png" />
+    <None Remove="Resources\refresh.ico" />
     <None Remove="Resources\ShowNowICO.ico" />
   </ItemGroup>
 
@@ -19,6 +20,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\minimize_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\refresh.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ShowNowICO.ico">

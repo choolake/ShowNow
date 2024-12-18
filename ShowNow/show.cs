@@ -190,5 +190,26 @@ namespace ShowNow
             }
         }
 
+        private void butRefresh_Click(object sender, EventArgs e)
+        {
+            //Fetch IP on startup
+            Task.Run(async () =>
+            {
+                ipAddress = await control.GetPublicIpArddress();
+                notifyIcon.Text = $"Public IP: {ipAddress}";
+                lblIP02.Invoke(new Action(() => { lblIP02.Text = ipAddress; }));
+
+            });
+            if (allIntf01.Checked)
+            {
+                txtBoxInterface01.Text = string.Join(Environment.NewLine, control.UpNetwokDetails());
+                allIntf01.Text = "Up";
+            }
+            else
+            {
+                txtBoxInterface01.Text = string.Join(Environment.NewLine, control.NetwokDetails());
+                allIntf01.Text = "All";
+            }
+        }
     }
 }

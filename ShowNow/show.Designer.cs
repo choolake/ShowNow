@@ -36,6 +36,8 @@
             horizontalPanel1 = new FlowLayoutPanel();
             HorizontalPanel2 = new FlowLayoutPanel();
             flowHLayout2 = new FlowLayoutPanel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            butRefresh = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             allIntf01 = new CheckBox();
             lblAllInterface01 = new Label();
@@ -47,6 +49,7 @@
             horizontalPanel1.SuspendLayout();
             HorizontalPanel2.SuspendLayout();
             flowHLayout2.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -123,6 +126,7 @@
             // 
             // flowHLayout2
             // 
+            flowHLayout2.Controls.Add(flowLayoutPanel2);
             flowHLayout2.Controls.Add(flowLayoutPanel1);
             flowHLayout2.Controls.Add(lblPubIp01);
             flowHLayout2.Controls.Add(lblIP02);
@@ -133,15 +137,36 @@
             flowHLayout2.Size = new Size(492, 47);
             flowHLayout2.TabIndex = 4;
             // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.Controls.Add(butRefresh);
+            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel2.Location = new Point(3, 2);
+            flowLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(41, 41);
+            flowLayoutPanel2.TabIndex = 9;
+            // 
+            // butRefresh
+            // 
+            butRefresh.BackgroundImage = Properties.Resources.refresh;
+            butRefresh.BackgroundImageLayout = ImageLayout.Zoom;
+            butRefresh.Location = new Point(3, 3);
+            butRefresh.Name = "butRefresh";
+            butRefresh.Size = new Size(36, 36);
+            butRefresh.TabIndex = 8;
+            butRefresh.UseVisualStyleBackColor = true;
+            butRefresh.Click += butRefresh_Click;
+            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(allIntf01);
             flowLayoutPanel1.Controls.Add(lblAllInterface01);
             flowLayoutPanel1.FlowDirection = FlowDirection.BottomUp;
-            flowLayoutPanel1.Location = new Point(3, 2);
+            flowLayoutPanel1.Location = new Point(50, 2);
             flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(241, 41);
+            flowLayoutPanel1.Size = new Size(174, 41);
             flowLayoutPanel1.TabIndex = 8;
             // 
             // allIntf01
@@ -174,7 +199,7 @@
             // 
             lblPubIp01.AutoSize = true;
             lblPubIp01.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPubIp01.Location = new Point(250, 0);
+            lblPubIp01.Location = new Point(230, 0);
             lblPubIp01.Name = "lblPubIp01";
             lblPubIp01.Size = new Size(81, 20);
             lblPubIp01.TabIndex = 3;
@@ -184,7 +209,7 @@
             // 
             lblIP02.AutoSize = true;
             lblIP02.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIP02.Location = new Point(337, 0);
+            lblIP02.Location = new Point(317, 0);
             lblIP02.Name = "lblIP02";
             lblIP02.Size = new Size(81, 20);
             lblIP02.TabIndex = 4;
@@ -197,7 +222,7 @@
             butPubIPCopy.BackgroundImageLayout = ImageLayout.Zoom;
             butPubIPCopy.FlatAppearance.BorderSize = 0;
             butPubIPCopy.FlatStyle = FlatStyle.Flat;
-            butPubIPCopy.Location = new Point(424, 3);
+            butPubIPCopy.Location = new Point(404, 3);
             butPubIPCopy.Name = "butPubIPCopy";
             butPubIPCopy.Size = new Size(30, 17);
             butPubIPCopy.TabIndex = 5;
@@ -235,6 +260,7 @@
             HorizontalPanel2.PerformLayout();
             flowHLayout2.ResumeLayout(false);
             flowHLayout2.PerformLayout();
+            flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -258,5 +284,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Label lblAllInterface01;
         private Label lblPubIp01;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Button butRefresh;
     }
 }
