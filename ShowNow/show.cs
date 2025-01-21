@@ -47,7 +47,7 @@ namespace ShowNow
             ////
             this.StartPosition = FormStartPosition.Manual;
             this.BackColor = Color.White;
-            ShowIcon = false;
+            ShowIcon = true;
             ////
             // Handle tray icon double-click
             notifyIcon.DoubleClick += ShowForm;
