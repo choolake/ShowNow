@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>ShowNow.Program</StartupObject>
+    <ApplicationIcon>Resources\ShowNowICO.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +15,10 @@
     <None Remove="Resources\minimize_icon.png" />
     <None Remove="Resources\refresh.ico" />
     <None Remove="Resources\ShowNowICO.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\ShowNowICO.ico" />
   </ItemGroup>
 
   <ItemGroup>
